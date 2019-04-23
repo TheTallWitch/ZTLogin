@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.gearback.custom.CustomFontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerText"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/normal_text"
+        android:textColor="@color/darkText"
+        android:layout_gravity="right"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/borderLight"/>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp">
+    <com.gearback.custom.CustomFontEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/grayText"
+        android:textColor="@color/darkText"
+        android:id="@+id/fieldUserName"
+        android:hint="@string/field_username"
+        android:inputType="text"/>
+    <com.gearback.custom.CustomFontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:id="@+id/emptyUsername"
+        android:text="@string/field_empty_username"
+        android:textSize="@dimen/small_text"
+        android:textColor="@color/red" />
+</LinearLayout>

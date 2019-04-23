@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="24dp">
+    <com.gearback.custom.CustomFontTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/field_newsletter"
+        android:textSize="@dimen/normal_text"
+        android:textColor="@color/darkText"
+        android:id="@+id/fieldNewsLetterText"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fieldNewsLetter"/>
+</LinearLayout>

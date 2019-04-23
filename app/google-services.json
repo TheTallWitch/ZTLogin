@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "1089944952763",
+    "firebase_url": "https://logintest-e9ddd.firebaseio.com",
+    "project_id": "logintest-e9ddd",
+    "storage_bucket": "logintest-e9ddd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089944952763:android:a7f3678235efcad6",
+        "android_client_info": {
+          "package_name": "com.gearback.zt.loginproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1089944952763-beq8gc59vaohip1hmhsg2am54bgcn9vi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gearback.zt.loginproject",
+            "certificate_hash": "2d6d5e8e31865a5240a62c1a9e25b14467f38f3f"
+          }
+        },
+        {
+          "client_id": "1089944952763-ei37i2vcepev04gpao5sg33m4r6soqda.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gearback.zt.loginproject",
+            "certificate_hash": "80945ddf161d8446a7fbdf70e0936705330f7ffb"
+          }
+        },
+        {
+          "client_id": "1089944952763-8ohut5o33kbi79drubhp0oarqkllnmkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7ChOkylcOqi4kw253zqSP9rdIhM3g7LY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1089944952763-8ohut5o33kbi79drubhp0oarqkllnmkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

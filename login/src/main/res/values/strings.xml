@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="ad_domain">https://www.zodtond.com/</string>
+    <string name="backIcon">&#xE5C8;</string>
+    <string name="continue_pay">ادامه</string>
+    <string name="cancel">لغو</string>
+    <string name="validate">تایید</string>
+    <string name="no_net_signup">لطفا برای ثبت نام حساب کاربری جدید ابتدا اتصال دستگاه خود را به اینترنت بررسی کرده و سپس دوباره امتحان کنید.</string>
+    <string name="try_again">بررسی مجدد</string>
+
+    <string name="forget_password">بازیابی کلمه عبور</string>
+    <string name="forget_password_desc">برای بازیابی کلمه عبور خود ایمیلی که با آن ثبت نام کرده اید را وارد کنید تا کلمه عبور جدید برای شما ارسال شود.</string>
+    <string name="email_found">ایمیل شما در سیستم یافته شد و کلمه عبور به این ایمیل فرستاده شد:</string>
+    <string name="email_not_found">ایمیل شما در سیستم یافته نشد!</string>
+    <string name="new_password_sent">لطفا برای دریافت کلمه عبور خود، به ایمیل فرستاده شده مراجعه کنید.</string>
+    <string name="send_password">دریافت کلمه عبور</string>
+    <string name="password_sent_recently">کلمه عبور به تازگی به ایمیل شما فرستاده شده است</string>
+    <string name="email_sent">ایمیل فرستاده شد</string>
+
+    <string name="login">ورود</string>
+    <string name="login_google">ورود با گوگل</string>
+    <string name="login_desc">از حساب کاربری زود تند خود برای ورود به این نرم افزار استفاده کنید.</string>
+    <string name="empty_username">لطفا نام کاربری خود را وارد کنید</string>
+    <string name="empty_password">لطفا رمز عبور خود را وارد کنید</string>
+    <string name="signup">ثبت نام کنید</string>
+    <string name="signup_desc">حسابی برای ورود ندارید؟</string>
+    <string name="forget_pass">آیا کلمه عبور خود را فراموش کرده اید؟</string>
+    <string name="login_error">نام کاربری و یا رمز عبور شما اشتباه است</string>
+    <string name="register_gold">حذف تبلیغات</string>
+
+    <string name="pay">پرداخت</string>
+    <string name="remove_ad_desc">در صورتی که مایل به حذف تبلیغات این نرم افزار برای اکانت خود در تمامی دستگاه ها هستید، ادامه دهید.</string>
+    <string name="pay_price">هزینه:</string>
+    <string name="extend_title">تمدید زمان حذف آگهی</string>
+    <string name="extend_desc">از زمان حذف آگهی نرم افزار برای حساب کاربری شما %1$s روز باقی مانده است.</string>
+    <string name="extend_desc2">در صورت تمایل برای افزایش این مدت زمان، حساب خود را تمدید کنید.</string>
+    <string name="extend_pay_desc">در صورتی که مایل به تمدید زمان حذف تبلیغات این نرم افزار برای اکانت خود در تمامی دستگاه ها هستید، ادامه دهید.</string>
+    <string name="expire_date">تاریخ انقضا:</string>
+    <string name="until">(تا </string>
+    <string name="until_end">(</string>
+    <string name="duration">به مدت:</string>
+    <string name="one_year">یک سال</string>
+    <string name="extend">تمدید</string>
+    <string name="remove_desc">شما می توانید با حذف تبلیغات از این برنامه با اکانت خود در تمامی دستگاه های خود، از این برنامه بدون تبلیغات استفاده کنید.</string>
+    <string name="login_register_desc1">این نرم افزار با استفاده از حساب کاربری زود تند، اعتبار شما را مدیریت می کند.</string>
+    <string name="login_register_desc2">در صورتی که آگهی این نرم افزار را حذف کرده باشید، در همه دستگاه های خود نیز می توانید با همین حساب وارد شده و از نرم افزار بدون آگهی استفاده کنید.</string>
+    <string name="expire_desc">تا زمان انقضا حذف آگهی شما تنها %1$s روز باقی مانده است. لطفا جهت تمدید اکانت خود در صورت تمایل اقدام کنید.</string>
+    <string name="expired_desc">مدت زمان حذف آگهی اکانت شما به پایان رسیده است. لطفا جهت تمدید اکانت خود در صورت تمایل اقدام کنید.</string>
+    <string name="removed_desc">آگهی برنامه برای اکانت شما به مدت یک سال حذف شد. در صورت تمایل می توانید مدت زمان آنرا تمدید کنید.</string>
+
+    <string name="register">ثبت نام</string>
+    <string name="signup_text">لطفا برای ثبت حساب کاربری زود تند فرم زیر را پر کنید.</string>
+    <string name="field_full_name">نام کامل</string>
+    <string name="field_choose">انتخاب کنید</string>
+    <string name="field_no_image">بدون تصویر</string>
+    <string name="field_personal">حقیقی</string>
+    <string name="field_company">حقوقی</string>
+    <string name="field_melli_num">شماره ملی</string>
+    <string name="field_melli_code">کد ملی</string>
+    <string name="field_gender">جنسیت</string>
+    <string name="field_country">کشور</string>
+    <string name="field_state">استان</string>
+    <string name="field_city">شهر</string>
+    <string name="field_site">سایت شخصی</string>
+    <string name="field_cell">شماره همراه</string>
+    <string name="field_email">ایمیل</string>
+    <string name="field_username">نام کاربری</string>
+    <string name="field_password">گذر واژه</string>
+    <string name="field_password_repeat">تکرار گذر واژه</string>
+    <string name="field_newsletter">مایل به اشتراک در خبرنامه هستم</string>
+    <string name="field_camera">انتخاب عکس با دوربین</string>
+    <string name="field_gallery">انتخاب عکس از گالری</string>
+    <string name="please_wait">لطفا چند لحظه صبر کنید</string>
+
+    <string name="field_empty_name">نام کامل نمی تواند خالی باشد</string>
+    <string name="field_empty_melli_code">کد ملی نمی تواند خالی باشد</string>
+    <string name="field_empty_melli_num">شماره ملی نمی تواند خالی باشد</string>
+    <string name="field_empty_cell">شماره همراه نمی تواند خالی باشد</string>
+    <string name="field_empty_email">ایمیل نمی تواند خالی باشد</string>
+    <string name="field_empty_username">نام کاربری نمی تواند خالی باشد</string>
+    <string name="field_empty_password">گذرواژه نمی تواند خالی باشد</string>
+    <string name="field_empty_password_repeat">تکرار گذرواژه نمی تواند خالی باشد</string>
+    <string name="field_diff_password_repeat">تکرار گذرواژه با گذرواژه بالا متفاوت است</string>
+    <string name="field_wrong_email">ایمیل وارد شده صحیح نمی باشد</string>
+    <string name="field_used_email">این ایمیل قبلا در سیستم وارد شده است</string>
+    <string name="field_used_username">این نام کاربری قبلا در سیستم وارد شده است</string>
+    <string name="signed_up">ثبت نام با موفقیت صورت گرفت</string>
+    <string name="signup_error">مشکلی در ثبت نام رخ داد</string>
+    <string name="error">خطایی در اجرای درخواست رخ داد. لطفا بعدا امتحان کنید</string>
+
+    <string name="no_internet">عدم دسترسی به اینترنت</string>
+    <string name="no_internet_desc">دسترسی به اینترنت امکان پذیر نبود. لطفا اتصال دستگاه خود را بررسی کرده و دوباره امتحان کنید.</string>
+</resources>
