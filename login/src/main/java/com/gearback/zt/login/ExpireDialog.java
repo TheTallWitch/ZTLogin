@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.R;
 import com.spournasseh.calendartool.CalendarTool;
 
 import java.util.Calendar;
@@ -43,6 +42,9 @@ public class ExpireDialog extends DialogFragment {
         dateText = view.findViewById(R.id.dateText);
         dialogText = view.findViewById(R.id.dialogText);
         extendBtn = view.findViewById(R.id.extendBtn);
+
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
 
         if (getArguments().getInt("days") == 0) {
             dialogText.setText(getString(R.string.expired_desc));
@@ -81,12 +83,6 @@ public class ExpireDialog extends DialogFragment {
         });
 
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

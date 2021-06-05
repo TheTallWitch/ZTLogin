@@ -2,7 +2,7 @@ package com.gearback.zt.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.R;
 
 public class LoginRegisterDialog extends DialogFragment {
 
@@ -32,6 +31,9 @@ public class LoginRegisterDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_register_dialog, container, false);
         loginBtn = view.findViewById(R.id.loginBtn);
+
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +77,6 @@ public class LoginRegisterDialog extends DialogFragment {
             });
             consentDialog.show(getActivity().getSupportFragmentManager(), "consentDialog");
         }
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

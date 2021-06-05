@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -18,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.R;
 import com.spournasseh.calendartool.CalendarTool;
 import com.squareup.picasso.Picasso;
 
@@ -58,6 +57,9 @@ public class ExtendDialog extends DialogFragment {
         accName = view.findViewById(R.id.accName);
         accUsername = view.findViewById(R.id.accUsername);
         payBtn = view.findViewById(R.id.payBtn);
+
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
 
         accName.setText(getArguments().getString("userName"));
         accUsername.setText(getArguments().getString("userMail"));
@@ -102,12 +104,6 @@ public class ExtendDialog extends DialogFragment {
             }
         });
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

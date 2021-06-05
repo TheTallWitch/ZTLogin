@@ -1,12 +1,10 @@
 package com.gearback.zt.login;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.core.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,8 +17,6 @@ import android.widget.Toast;
 
 import com.gearback.methods.HttpPostRequest;
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.LoginActivity;
-import com.gearback.zt.login.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +45,9 @@ public class LoginPasswordDialog extends DialogFragment {
         emailValue = view.findViewById(R.id.emailValue);
         emailEmpty = view.findViewById(R.id.emailEmpty);
         emailResult = view.findViewById(R.id.emailResult);
+
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
 
         emailEmpty.setVisibility(View.GONE);
         emailResult.setVisibility(View.GONE);
@@ -129,12 +128,6 @@ public class LoginPasswordDialog extends DialogFragment {
         });
 
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

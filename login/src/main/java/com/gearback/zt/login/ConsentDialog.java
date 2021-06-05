@@ -1,7 +1,7 @@
 package com.gearback.zt.login;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -38,6 +38,9 @@ public class ConsentDialog extends DialogFragment {
         acceptBtn = view.findViewById(R.id.setDialogBtn);
         rejectBtn = view.findViewById(R.id.closeDialogBtn);
 
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
+
         consentTitle.setText(getArguments().getString("title"));
         consentText.setText(getArguments().getString("text"));
         acceptBtn.setText(getArguments().getString("accept"));
@@ -63,12 +66,6 @@ public class ConsentDialog extends DialogFragment {
         });
 
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

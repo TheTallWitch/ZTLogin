@@ -1,7 +1,7 @@
 package com.gearback.zt.login;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -34,6 +34,9 @@ public class NoNetDialog extends DialogFragment {
         dialogText = view.findViewById(R.id.dialogText);
         tryBtn = view.findViewById(R.id.tryBtn);
 
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
+
         dialogText.setText(getArguments().getString("text"));
 
         tryBtn.setOnClickListener(new View.OnClickListener() {
@@ -60,13 +63,6 @@ public class NoNetDialog extends DialogFragment {
     }
     public interface OnSetClickListener {
         void onAccept();
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

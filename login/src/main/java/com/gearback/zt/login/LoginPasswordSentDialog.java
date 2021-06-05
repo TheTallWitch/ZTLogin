@@ -1,31 +1,18 @@
 package com.gearback.zt.login;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.core.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.gearback.methods.HttpPostRequest;
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.LoginActivity;
-import com.gearback.zt.login.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Calendar;
-import java.util.Date;
 
 public class LoginPasswordSentDialog extends DialogFragment {
     Methods methods = new Methods();
@@ -44,6 +31,10 @@ public class LoginPasswordSentDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.login_password_sent_dialog, container, false);
         continueBtn = view.findViewById(R.id.setDialogBtn);
         emailValue = view.findViewById(R.id.emailValue);
+
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
+
         emailValue.setText(getArguments().getString("email"));
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +45,6 @@ public class LoginPasswordSentDialog extends DialogFragment {
         });
 
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

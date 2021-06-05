@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -53,6 +53,9 @@ public class RegisterDialog extends DialogFragment {
         accUsername = view.findViewById(R.id.accUsername);
         payBtn = view.findViewById(R.id.payBtn);
 
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
+
         accName.setText(getArguments().getString("userName"));
         accUsername.setText(getArguments().getString("userMail"));
         if (!getArguments().getString("userAvatar").equals("")) {
@@ -90,12 +93,6 @@ public class RegisterDialog extends DialogFragment {
             }
         });
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override

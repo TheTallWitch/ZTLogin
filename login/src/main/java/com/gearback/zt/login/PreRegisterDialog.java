@@ -1,8 +1,7 @@
 package com.gearback.zt.login;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gearback.methods.Methods;
-import com.gearback.zt.login.R;
 import com.squareup.picasso.Picasso;
 
 public class PreRegisterDialog extends DialogFragment {
@@ -41,6 +39,9 @@ public class PreRegisterDialog extends DialogFragment {
         accName = view.findViewById(R.id.accName);
         accUsername = view.findViewById(R.id.accUsername);
 
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
+
         accName.setText(getArguments().getString("userName"));
         accUsername.setText(getArguments().getString("userMail"));
         if (!getArguments().getString("userAvatar").equals("")) {
@@ -66,12 +67,6 @@ public class PreRegisterDialog extends DialogFragment {
         });
 
         return view;
-    }
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        getDialog().getWindow().getAttributes().windowAnimations = R.style.fade_animation;
-        super.onActivityCreated(savedInstanceState);
     }
 
     @Override
