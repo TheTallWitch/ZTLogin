@@ -167,6 +167,19 @@
                 android:padding="10dp"
                 android:layout_marginTop="16dp"
                 android:clickable="true" />
+            <com.gearback.custom.CustomFontTextView
+                android:text="@string/agree_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginTermsPolicyText"
+                android:textColor="@color/grayText"
+                android:textSize="@dimen/xsmall_text"
+                android:textColorHighlight="@color/transparent"
+                android:textColorLink="@color/grayText"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="16dp"
+                android:clickable="true" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -27,6 +27,10 @@
     <string name="forget_pass">آیا کلمه عبور خود را فراموش کرده اید؟</string>
     <string name="login_error">نام کاربری و یا رمز عبور شما اشتباه است</string>
     <string name="register_gold">حذف تبلیغات</string>
+    <string name="agree_terms">قبل از ورود به برنامه %1$s و %2$s را مطالعه کنید</string>
+    <string name="terms">قوانین استفاده از برنامه</string>
+    <string name="privacy">حفاظت از حریم شخصی</string>
+    <string name="terms_link">https://www.zodtond.com/terms/</string>
 
     <string name="pay">پرداخت</string>
     <string name="remove_ad_desc">در صورتی که مایل به حذف تبلیغات این نرم افزار برای اکانت خود در تمامی دستگاه ها هستید، ادامه دهید.</string>

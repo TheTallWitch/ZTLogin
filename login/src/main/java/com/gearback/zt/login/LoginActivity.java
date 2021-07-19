@@ -3,11 +3,14 @@ package com.gearback.zt.login;
 import android.accounts.Account;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,8 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -53,14 +61,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     EditText userNameText, passwordText;
     Button loginBtn, googleLoginBtn;
-    TextView forgotPasswordBtn, signupBtn, emptyUsername, emptyPassword;
+    TextView forgotPasswordBtn, signupBtn, emptyUsername, emptyPassword, loginTermsPolicyText;
     Methods methods = new Methods();
     Classes classes = new Classes();
     public ProgressDialog loader;
     GoogleApiClient mGoogleApiClient;
     private static final int RC_GET_AUTH_CODE = 9003;
     Account mAccount;
-    String authCode;
+    String authCode, privacyLink;
 
     ImageView headerImage, logoImage;
 
@@ -83,6 +91,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         googleLoginBtn = findViewById(R.id.googleLoginBtn);
         emptyUsername = findViewById(R.id.emptyUsername);
         emptyPassword = findViewById(R.id.emptyPassword);
+        loginTermsPolicyText = findViewById(R.id.loginTermsPolicyText);
         emptyUsername.setVisibility(View.GONE);
         emptyPassword.setVisibility(View.GONE);
 
@@ -90,7 +99,56 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Bundle bundle = getIntent().getBundleExtra("loginBundle");
             headerImage.setImageResource(bundle.getInt("header", 0));
             logoImage.setImageResource(bundle.getInt("logo", 0));
+            privacyLink = bundle.getString("privacy");
         }
+
+        ClickableSpan clickTerms = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(getString(R.string.terms_link)));
+                try {
+                    startActivity(i);
+                }
+                catch (ActivityNotFoundException e) {
+                    Log.d("Error", e.toString());
+                }
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+
+        ClickableSpan clickPrivacy = new ClickableSpan() {
+            @Override
+            public void onClick(View textView) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(privacyLink));
+                try {
+                    startActivity(i);
+                }
+                catch (ActivityNotFoundException e) {
+                    Log.d("Error", e.toString());
+                }
+            }
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+
+        String termText = getString(R.string.terms);
+        String privacyText = getString(R.string.privacy);
+        String termsAndPolicyText = getString(R.string.agree_terms, termText, privacyText);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(termsAndPolicyText);
+        spannableStringBuilder.setSpan(clickTerms, termsAndPolicyText.indexOf(termText), termsAndPolicyText.indexOf(termText) + termText.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableStringBuilder.setSpan(clickPrivacy, termsAndPolicyText.indexOf(privacyText), termsAndPolicyText.indexOf(privacyText) + privacyText.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        loginTermsPolicyText.setText(spannableStringBuilder);
+        loginTermsPolicyText.setMovementMethod(LinkMovementMethod.getInstance());
+        loginTermsPolicyText.setHighlightColor(Color.TRANSPARENT);
 
         signupBtn.setPaintFlags(signupBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         signupBtn.setText(getString(R.string.signup));
